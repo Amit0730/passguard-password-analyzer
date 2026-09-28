@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PassGuard — Password Security Analyzer
 
-## Getting Started
+Privacy-first browser-based password strength analyzer and secure password generator.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **100% Client-Side Privacy**: Passwords are never sent to any server, database, or API. All analysis happens locally in your browser.
+- **Detailed Security Analysis**: Checks for length, character variety, common patterns, repeated characters, and sequential patterns.
+- **Entropy & Crack Time Estimates**: Get an educational estimate on how long it would take to crack your password.
+- **Actionable Recommendations**: Receive specific tips to improve your password strength.
+- **Secure Password Generator**: Generate strong, unpredictable passwords up to 64 characters using cryptographically secure random number generation.
+- **Cybersecurity Aesthetic**: Clean, modern, dark-first UI with responsive design.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Password Privacy Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This application is built with privacy as the top priority.
+- No backend server.
+- No databases.
+- No analytics tracking keystrokes.
+- Passwords are kept entirely in React state memory and are destroyed when the page is closed or refreshed.
+- Not stored in `localStorage`, `sessionStorage`, or cookies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Entropy & Crack Time Methodology
 
-## Learn More
+The entropy is calculated based on the character pool size and the length of the password.
+The crack time estimate assumes a highly optimized offline brute-force attack capable of 100 billion guesses per second.
+**Disclaimer:** Crack time estimates are purely educational and based on blind brute-force guessing against fast modern hardware. Real-world cracking uses dictionaries, rules, and breached databases which are vastly faster. Never treat an estimate as a guarantee.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Local Setup
 
-## Deploy on Vercel
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License
